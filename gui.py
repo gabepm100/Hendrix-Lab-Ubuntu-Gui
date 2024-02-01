@@ -18,23 +18,23 @@ def display_text():
    label.configure(text=string)
 
 def run():
-   os.chdir('/home/gabepm100')
-   execute_python_file('python deckPositionGui.py')
+   os.chdir('/home/halversm/Hendrix-Lab-Ubuntu-Gui')
+   execute_python_file('deckPositionsGui.py',"")
 
 def input1(output,sim,auto):
     global entry
     string= entry.get()
-    os.chdir('/home/gabepm100/Documents/Random')
+    os.chdir('/home/halversm/Documents/OT2Control')
     #test one
-    command="python pyScript.py"
-    output=execute_python_file(string)
+    command="controller.py"
+    output=execute_python_file(command,string)
     T.insert(tk.END,output)
     #real one 
     #command="python controller.py -n "+string
 
-def execute_python_file(file_Name):
+def execute_python_file(file_Name,arguments):
    try:
-      completed_process = subprocess.run(['python3', 'pyScript.py', file_Name], capture_output=True)
+      completed_process = subprocess.run(['python3', file_Name,arguments], capture_output=True)
       if completed_process.returncode == 0:
          print("Execution successful.")
          print("Output:")
