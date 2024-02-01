@@ -28,11 +28,13 @@ def input1(output,sim,auto):
     #test one
     command="controller.py"
     output=execute_python_file(command,string)
+    command="controller.py"
+    output=execute_python_file(command,string)
     T.insert(tk.END,output)
     #real one 
     #command="python controller.py -n "+string
 
-def execute_python_file(file_Name,arguments):
+def execute_python_file(file_Name,arguments,argument):
    try:
       completed_process = subprocess.run(['python3', file_Name,arguments], capture_output=True)
       if completed_process.returncode == 0:
@@ -92,4 +94,3 @@ T.pack()
 
 
 win.mainloop()
-

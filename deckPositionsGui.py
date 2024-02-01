@@ -1,8 +1,13 @@
+
 import customtkinter
 import gspread
 
 
 def drawPipets(canvas,x,y):
+    """
+    Canvas is the canvas object
+    x and y are the x and y cordinates
+    """
     for i in range(12):
         for j in range(8):
             canvas.create_oval(x+20.66+(j*20) ,y+6.66+(i*12)+(i*3),x+32.66+(j*20) ,y+18.66+(i*12)+(i*3), outline="black", fill="red",width=2)
@@ -23,7 +28,9 @@ def drawReagents(canvas,x,y):
 
 
 def drawBoard(canvas):
-
+    """
+    
+    """
     canvas.create_rectangle(0, 50, 200, 250, fill="#7A797B",outline="black")
     
     canvas.create_rectangle(200, 50, 400, 250, fill="#7A797B",outline="black")
